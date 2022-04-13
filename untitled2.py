@@ -1,5 +1,7 @@
-import urllib
-dwn_link = input("enter video link.\n")
+import requests
 
-file_name = 'trial_video.mp4' 
-urllib.retrieve(dwn_link, file_name)
+
+url = input("enter vid link:\n")
+r = requests.get(url, allow_redirects=True)
+
+open('facebook.ico', 'wb').write(r.content)
